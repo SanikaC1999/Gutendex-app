@@ -68,7 +68,7 @@ const BookListPage = () => {
       {/* Search Bar */}
       <div className="row mb-3">
         <div className="col-12 col-md-6 mx-auto">
-          <div className="input-group shadow-sm">
+          <div className="input-group shadow-sm" style={{ border: '2px solid #c082c0', borderRadius: '12px' }}>
             <span className="input-group-text bg-light border-0">
               <i className="bi bi-search text-muted"></i>
             </span>
@@ -94,7 +94,9 @@ const BookListPage = () => {
         <div className="row">
           {books.map((book) => (
             <div key={book.id} className="col-6 col-md-4 col-lg-3 mb-4">
-              <div className="card h-100" onClick={() => handleBookClick(book)}>
+              <div className="card h-100" 
+                   onClick={() => handleBookClick(book)} 
+                   style={{ border: '2px solid #c082c0', borderRadius: '12px' }}>
                 <img
                   src={book.formats['image/jpeg']}
                   className="card-img-top"
