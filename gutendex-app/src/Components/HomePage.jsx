@@ -3,10 +3,10 @@ import { useNavigate } from 'react-router-dom';
 
 const HomePage = () => {
   const genres = [
-    { name: 'Fiction', icon: 'bi bi-funnel' },
-    { name: 'Drama', icon: 'bi bi-emoji-smile-upside-down-fill' },
+    { name: 'Fiction', icon: 'bi bi-funnel-fill' },
+    { name: 'Drama', icon: 'bi bi-mask' },
     { name: 'Humor', icon: 'bi bi-emoji-smile' },
-    { name: 'Politics', icon: 'bi bi-person-raised-hand' },
+    { name: 'Politics', icon: 'bi bi-person-bounding-box' },
   ];
 
   const navigate = useNavigate();
@@ -16,7 +16,7 @@ const HomePage = () => {
   };
 
   return (
-    <div className="container mt-5">
+    <div className="container mt-5 text-center text-md-start">
       {/* Header Section */}
       <h1 className="display-4 text-primary">Gutenberg Project</h1>
       <p className="lead">
@@ -24,9 +24,9 @@ const HomePage = () => {
       </p>
 
       {/* Genre Buttons */}
-      <div className="row mt-4">
+      <div className="row mt-4 justify-content-center">
         {genres.map((genre) => (
-          <div key={genre.name} className="col-12 mb-3">
+          <div key={genre.name} className="col-12 col-md-8 mb-3">
             <button
               className="btn btn-light d-flex justify-content-between align-items-center w-100 shadow-sm p-3"
               onClick={() => handleGenreClick(genre.name.toLowerCase())}

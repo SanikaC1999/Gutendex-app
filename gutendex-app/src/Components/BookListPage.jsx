@@ -38,9 +38,16 @@ const BookListPage = () => {
   };
 
   const handleBookClick = (book) => {
-    const preferredFormat = book.formats['text/html'] || book.formats['application/pdf'] || book.formats['text/plain'];
-    if (preferredFormat) {
-      window.open(preferredFormat);
+    const htmlFormat = book.formats['text/html'];
+    const pdfFormat = book.formats['application/pdf'];
+    const txtFormat = book.formats['text/plain'];
+
+    if (htmlFormat) {
+      window.open(htmlFormat, '_blank');
+    } else if (pdfFormat) {
+      window.open(pdfFormat, '_blank');
+    } else if (txtFormat) {
+      window.open(txtFormat, '_blank');
     } else {
       alert('No viewable version available');
     }
@@ -60,7 +67,7 @@ const BookListPage = () => {
 
       {/* Search Bar */}
       <div className="row mb-3">
-        <div className="col-12">
+        <div className="col-12 col-md-6 mx-auto">
           <div className="input-group shadow-sm">
             <span className="input-group-text bg-light border-0">
               <i className="bi bi-search text-muted"></i>
